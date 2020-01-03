@@ -14,15 +14,20 @@ It shows how to:
 **Content of this ReadMe:**
 
 - [Maven Modules](#maven-modules)
+    - [de.slothsoft.example.build](#deslothsoftexamplebuild)
+    - [de.slothsoft.example](#deslothsoftexample)
+    - [de.slothsoft.example.it](#deslothsoftexampleit)
+    - [de.slothsoft.example.feature](#deslothsoftexamplefeature)
+    - [de.slothsoft.example.product](#deslothsoftexampleproduct)
 - [Developer Guide](#developer-guide)
 - [How to](#how-to)
-- [To Do](#to-do)
+- [To Do List](#to-do-list)
 - [License](#license)
 
 
 ## Maven Modules
 
-- **[de.slothsoft.example.build](#de-slothsoft-example-build)** - parent of the reactor
+- **[de.slothsoft.example.build](#deslothsoftexamplebuild)** - parent of the reactor
     - **[de.slothsoft.example](#deslothsoftexample)** - the plug-in with the usable code
     - **[de.slothsoft.example.it](#deslothsoftexampleit)** - the integration tests for above plug-in
     - **[de.slothsoft.example.feature](#deslothsoftexamplefeature)** - a feature for a feature-based product
@@ -115,8 +120,9 @@ The official release notes of [Tycho 0.24](https://wiki.eclipse.org/Tycho/Releas
 
 
 
-## To Do
+## To Do List
 
+_(All open issues can be found [here](https://github.com/slothsoft/example-eclipse-application/issues).)_
 
 - [#1 Get Maven Dependencies to Work](https://github.com/slothsoft/example-eclipse-application/issues/1)
 
