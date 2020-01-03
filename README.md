@@ -23,10 +23,10 @@ It shows how to:
 ## Maven Modules
 
 - **[de.slothsoft.example.build](#de-slothsoft-example-build)** - parent of the reactor
-    - **[de.slothsoft.example](#de-slothsoft-example)** - the plug-in with the usable code
-    - **[de.slothsoft.example.it](#de-slothsoft-example-it)** - the integration tests for above plug-in
-    - **[de.slothsoft.example.feature](#de-slothsoft-example-feature)** - a feature for a feature-based product
-    - **[de.slothsoft.example.product](#de-slothsoft-example-product)** - the product file to start and build an application
+    - **[de.slothsoft.example](#deslothsoftexample)** - the plug-in with the usable code
+    - **[de.slothsoft.example.it](#deslothsoftexampleit)** - the integration tests for above plug-in
+    - **[de.slothsoft.example.feature](#deslothsoftexamplefeature)** - a feature for a feature-based product
+    - **[de.slothsoft.example.product](#deslothsoftexampleproduct)** - the product file to start and build an application
 
 
 ### de.slothsoft.example.build
