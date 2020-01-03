@@ -1,14 +1,5 @@
 # Example Eclipse Application
 
-**TODO:**
-
-- link https://blog.sandra-parsick.de/2017/09/22/generate-p2-repository-from-maven-artifacts-in-2017/
-- pomless build (commit first)
-
-
-
-------------------------------------------------------------------
-
 [![Build Status](https://travis-ci.org/slothsoft/example-eclipse-application.svg?branch=master)](https://travis-ci.org/slothsoft/example-eclipse-application)
 
 This example project shows how to develop and build an Eclipse based application using Tycho. 
@@ -25,7 +16,8 @@ It shows how to:
 - [Maven Modules](#maven-modules)
 - [Developer Guide](#developer-guide)
 - [How to](#how-to)
-
+- [To Do](#to-do)
+- [License](#license)
 
 
 ## Maven Modules
@@ -80,11 +72,9 @@ To start this project in your Eclipse, do:
      - Or in Eclipse right click on the _pom.xml_ and use _"Run as..."_ → _"Maven install"_
      - The resulting EXE file is in _de.slothsoft.example.product/target/products/de.slothsoft.example.product-<time>-<os>.zip_ and / or the folder next to the ZIP file
 
-[![Build Status](https://travis-ci.org/slothsoft/example-eclipse-application.svg?branch=master)](https://travis-ci.org/slothsoft/example-eclipse-application)
-
 To use this example as a template for your Eclipse based application you need to do the following:
 
-1. check out this project
+1. check out this project (or use the button "Use this template" in GitHub)
 1. rename my IDs to yours
     - "de.slothsoft" to your company's domain (including packages)
     - "example" to your project's name (the same for capitalized "Example")
@@ -112,3 +102,26 @@ The file _pom.xml_ has a property `tycho.version` that can be changed easily.
 ### How to change the Java version?
 
 The Java version is defined inside the _MANIFEST.MF_ for each plug-in (including the IT project). 
+
+
+### How to use plain Maven dependencies?
+
+I couldn't get it to work yet, but [this blog post](https://blog.sandra-parsick.de/2017/09/22/generate-p2-repository-from-maven-artifacts-in-2017/) with [this GitHub repository](https://github.com/sparsick/generate-p2-repository-from-maven-artifacts) shows how to do it.
+
+
+### How to do pomless builds?
+
+The official release notes of [Tycho 0.24](https://wiki.eclipse.org/Tycho/Release_Notes/0.24) will show you how it's done.
+
+
+
+## To Do
+
+
+- [#1 Get Maven Dependencies to Work](https://github.com/slothsoft/example-eclipse-application/issues/1)
+
+
+
+## License
+
+This project is licensed under the MIT License - see the [MIT license](LICENSE) for details.
