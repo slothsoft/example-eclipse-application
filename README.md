@@ -9,12 +9,16 @@
 
 ------------------------------------------------------------------
 
+[![Build Status](https://travis-ci.org/slothsoft/example-eclipse-application.svg?branch=master)](https://travis-ci.org/slothsoft/example-eclipse-application)
+
 This example project shows how to develop and build an Eclipse based application using Tycho. 
 
 It shows how to:
 
 - build a product with Tycho
 - use a target platform both inside Tycho and Eclipse
+- create a structure that can be used on multiple operation system (e.g. my OS is Windows, but this project is build by [Travis](https://travis-ci.org/slothsoft/example-eclipse-application) using Linux)
+
 
 **Content of this ReadMe:**
 
@@ -76,7 +80,7 @@ To start this project in your Eclipse, do:
      - Or in Eclipse right click on the _pom.xml_ and use _"Run as..."_ → _"Maven install"_
      - The resulting EXE file is in _de.slothsoft.example.product/target/products/de.slothsoft.example.product-<time>-<os>.zip_ and / or the folder next to the ZIP file
 
-
+[![Build Status](https://travis-ci.org/slothsoft/example-eclipse-application.svg?branch=master)](https://travis-ci.org/slothsoft/example-eclipse-application)
 
 To use this example as a template for your Eclipse based application you need to do the following:
 
