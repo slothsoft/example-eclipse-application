@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="Eclipse Target Platform" sequenceNumber="7">
+<locations>
+	<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+		<repository location="http://download.eclipse.org/releases/2018-12"/>
+
+		<unit id="org.eclipse.sdk.feature.group" version="4.10.0.v20181206-1038"/>
+		<unit id="org.eclipse.equinox.sdk.feature.group" version="3.16.0.v20181130-2106"/>
+	</location>
+</locations>
+	<environment>
+		<os>win32</os>
+		<ws>win32</ws>
+		<arch>x86_64</arch>
+	</environment>
+</target>
