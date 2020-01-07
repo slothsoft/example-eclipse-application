@@ -7,7 +7,7 @@ This example project shows how to develop and build an Eclipse based application
 It shows how to:
 
 - build a product with Tycho
-- use a target platform both inside Tycho and Eclipse
+- use a target platform **file** both inside Tycho and Eclipse
 - create a structure that can be used on multiple operation system (e.g. my OS is Windows, but this project is build by [Travis](https://travis-ci.org/slothsoft/example-eclipse-application) using Linux)
 - use plain Maven dependencies
 
