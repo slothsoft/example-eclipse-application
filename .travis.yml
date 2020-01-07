@@ -3,3 +3,7 @@ jdk:
   - openjdk8
   - oraclejdk11
   - openjdk11
+script:
+  - mvn -f maven-p2/pom.xml install -Pstart -B
+  - mvn test -B
+  - mvn -f maven-p2/pom.xml package -Pstop -B

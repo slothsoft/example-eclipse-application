@@ -9,6 +9,7 @@ It shows how to:
 - build a product with Tycho
 - use a target platform both inside Tycho and Eclipse
 - create a structure that can be used on multiple operation system (e.g. my OS is Windows, but this project is build by [Travis](https://travis-ci.org/slothsoft/example-eclipse-application) using Linux)
+- use plain Maven dependencies
 
 
 **Content of this ReadMe:**
@@ -32,6 +33,7 @@ It shows how to:
     - **[de.slothsoft.example.it](#deslothsoftexampleit)** - the integration tests for above plug-in
     - **[de.slothsoft.example.feature](#deslothsoftexamplefeature)** - a feature for a feature-based product
     - **[de.slothsoft.example.product](#deslothsoftexampleproduct)** - the product file to start and build an application
+- **[maven-p2](#maven-p2)** - the P2 repository for Maven dependencies
 
 
 ### de.slothsoft.example.build
@@ -63,19 +65,28 @@ This project contains a feature for a feature-based product.
 This project has the product file to start build an application from Eclipse and build it from Tycho.
 
 
+### maven-p2
+
+This project converts plain Maven dependencies into a P2 repository and is able to start and stop said repository. It can handle JARs with and without OSGi information in their _Manifest.MF_.
+
+Check out the awesome [p2-maven-plugin](https://github.com/reficio/p2-maven-plugin) to learn more.
+
+
 
 ## Developer Guide
 
 To start this project in your Eclipse, do:
 
 1. Clone this repository
+1. Call `mvn install -Pstart` on _maven-p2/pom.xml_ to start a P2 repository locally
 1. To start the application from **Eclipse** do the following:
     1. Open the file _platform.target_ and click on _"Set as Active Target Platform"_
     1. _de.slothsoft.example.product/ExampleApp.product_ and click on _"1. Synchronize"_ and then _"2. Launch Eclipse Application"_
 1. To build the application with **Tycho** 
      - Run `mvn clean install` on the repository root
      - Or in Eclipse right click on the _pom.xml_ and use _"Run as..."_ → _"Maven install"_
-     - The resulting EXE file is in _de.slothsoft.example.product/target/products/de.slothsoft.example.product-<time>-<os>.zip_ and / or the folder next to the ZIP file
+     - The resulting EXE file is in _de.slothsoft.example.product/target/products/de.slothsoft.example.product-&lt;time>-&lt;os>.zip_ and / or the folder next to the ZIP file
+1. when finished, call `mvn package -Pstop` to stop the P2 repository
 
 To use this example as a template for your Eclipse based application you need to do the following:
 
@@ -111,7 +122,30 @@ The Java version is defined inside the _MANIFEST.MF_ for each plug-in (including
 
 ### How to use plain Maven dependencies?
 
-I couldn't get it to work yet, but [this blog post](https://blog.sandra-parsick.de/2017/09/22/generate-p2-repository-from-maven-artifacts-in-2017/) with [this GitHub repository](https://github.com/sparsick/generate-p2-repository-from-maven-artifacts) shows how to do it.
+I followed the tutorial for the Maven plug-in [p2-maven-plugin](https://github.com/reficio/p2-maven-plugin). Basically, the following is done:
+
+1. call `mvn install -Pstart` on _maven-p2/pom.xml_ to create a P2 repository and then start it locally
+1. now the _platform.target_ can access "http://localhost:8080/site/"
+1. when finished, call `mvn package -Pstop` or `mvn jetty:stop` to stop the P2 repository
+
+The entire configuration is contained in _maven-p2/_.
+
+
+
+### How to remove use of plain Maven dependencies?
+
+If you don't need the feature, you can remove it like this:
+
+1. Delete the folder _maven-p2/_ from the repository
+1. Remove the location "http://localhost:8080/site/" from _platform.target_
+1. Remove the entire "script" part of the Travis configuration file _.travis.yml_
+
+
+
+### How to add / update Maven dependencies?
+
+Open the file _maven-p2/pom.xml_ and configure the artifacts of the `p2-maven-plugin`. I'd advise to only add one version for each artifact and use "0.0.0" in the target platform.
+
 
 
 ### How to do pomless builds?
@@ -119,12 +153,15 @@ I couldn't get it to work yet, but [this blog post](https://blog.sandra-parsick.
 The official release notes of [Tycho 0.24](https://wiki.eclipse.org/Tycho/Release_Notes/0.24) will show you how it's done.
 
 
+### How to release?
+
+This official [tutorial](https://wiki.eclipse.org/Tycho/Release_Workflow) shows how to release a Tycho project.
+
+
 
 ## To Do List
 
 _(All open issues can be found [here](https://github.com/slothsoft/example-eclipse-application/issues).)_
-
-- [#1 Get Maven Dependencies to Work](https://github.com/slothsoft/example-eclipse-application/issues/1)
 
 
 
