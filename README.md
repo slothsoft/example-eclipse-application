@@ -138,7 +138,7 @@ If you don't need the feature, you can remove it like this:
 
 1. Delete the folder _maven-p2/_ from the repository
 1. Remove the location "http://localhost:8080/site/" from _platform.target_
-1. Remove the entire "install" and "before_install" part of the Travis configuration file _.travis.yml_
+1. Remove the "before_install" and "after_script" part of the Travis configuration file _.travis.yml_
 
 
 
