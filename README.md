@@ -20,6 +20,7 @@ It shows how to:
     - [de.slothsoft.example.it](#deslothsoftexampleit)
     - [de.slothsoft.example.feature](#deslothsoftexamplefeature)
     - [de.slothsoft.example.product](#deslothsoftexampleproduct)
+    - [maven-p2](#maven-p2)
 - [Developer Guide](#developer-guide)
 - [How to](#how-to)
 - [To Do List](#to-do-list)
